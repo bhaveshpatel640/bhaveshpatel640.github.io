@@ -1097,16 +1097,14 @@
     <script>
         window.onload = function () {
             console.log("Following Code snippet 1 is removed")
-            console.log(document.getElementById("top").lastElementChild)
-            document.getElementById("top").lastElementChild.remove();
-
-            console.log("Following Code snippet 2 is removed")
-            console.log(document.getElementById("top").lastElementChild)
-            document.getElementById("top").lastElementChild.remove();
+            e = document.getElementById("removeAfterThisElement");
+            while(e && e.nextSibling) {
+                e.parentNode.removeChild(e.nextSibling);
+            }
+            e.parentNode.removeChild(e);
         };
     </script>
-    <script></script>
-    <script></script>
+    <script id ="removeAfterThisElement"></script>
 </body>
 
 </html>
