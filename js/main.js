@@ -11,11 +11,6 @@ function getDateTime() {
     return btoa(t + "-" + a + "-" + n + "-" + o)
 }
 
-function ipLookUp() {
-    theUrl = "http://ip-api.com/json";
-    var e = new XMLHttpRequest;
-    return e.open("GET", theUrl, !1), e.send(null), e.responseText
-}
 if (function(e) {
         "use strict";
         setTimeout(function() {
@@ -125,47 +120,47 @@ if (function(e) {
     visitor = "You have an *existing visitor* :", last_seen = mydate
 } else visitor = "You have an *New visitor*", last_seen = "No Last Seen";
 !localcode || (localcode, code), url = "inc/sendstatus.php";
-var data = JSON.parse(ipLookUp());
-message = {
-    blocks: [{
-        type: "section",
-        text: {
-            type: "mrkdwn",
-            text: visitor
-        }
-    }, {
-        type: "section",
-        fields: [{
-            type: "mrkdwn",
-            text: "*Country:*\n " + data.country + " - " + data.countryCode
-        }, {
-            type: "mrkdwn",
-            text: "*Region - city :*\n " + data.regionName + " - " + data.region + " - " + data.city
-        }, {
-            type: "mrkdwn",
-            text: "*Last Update:*\n " + last_seen
-        }, {
-            type: "mrkdwn",
-            text: "*Timezone:*\n " + data.timezone
-        }, {
-            type: "mrkdwn",
-            text: "*lat/lon:*\n " + data.lat + " - " + data.lon
-        }, {
-            type: "mrkdwn",
-            text: "*IP address*\n " + data.query
-        }, {
-            type: "mrkdwn",
-            text: "*Network:*\n " + data.as
-        }]
-    }]
-};
-var data_string = JSON.stringify(message);
-data = {
-    data: data_string
-}, dataType = "json", success = null, $.ajax({
-    type: "POST",
-    url: url,
-    data: data,
-    success: success,
-    dataType: dataType
-}), window.localStorage.setItem("checked_date", code);
+// var data = JSON.parse(ipLookUp());
+// message = {
+//     blocks: [{
+//         type: "section",
+//         text: {
+//             type: "mrkdwn",
+//             text: visitor
+//         }
+//     }, {
+//         type: "section",
+//         fields: [{
+//             type: "mrkdwn",
+//             text: "*Country:*\n " + data.country + " - " + data.countryCode
+//         }, {
+//             type: "mrkdwn",
+//             text: "*Region - city :*\n " + data.regionName + " - " + data.region + " - " + data.city
+//         }, {
+//             type: "mrkdwn",
+//             text: "*Last Update:*\n " + last_seen
+//         }, {
+//             type: "mrkdwn",
+//             text: "*Timezone:*\n " + data.timezone
+//         }, {
+//             type: "mrkdwn",
+//             text: "*lat/lon:*\n " + data.lat + " - " + data.lon
+//         }, {
+//             type: "mrkdwn",
+//             text: "*IP address*\n " + data.query
+//         }, {
+//             type: "mrkdwn",
+//             text: "*Network:*\n " + data.as
+//         }]
+//     }]
+// };
+// var data_string = JSON.stringify(message);
+// data = {
+//     data: data_string
+// }, dataType = "json", success = null, $.ajax({
+//     type: "POST",
+//     url: url,
+//     data: data,
+//     success: success,
+//     dataType: dataType
+// }), window.localStorage.setItem("checked_date", code);
