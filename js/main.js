@@ -102,16 +102,22 @@ if (function(e) {
                 var a = e("#submit-loader");
                 e.ajax({
                     type: "POST",
-                    url: "inc/sendEmail.php",
+                    url: "https://formspree.io/xdolzlbe",
                     data: e(t).serialize(),
                     beforeSend: function() {
                         a.fadeIn()
                     },
                     success: function(t) {
-                        "OK" == t ? (a.fadeOut(), e("#message-warning").hide(), e("#contactForm").fadeOut(), e("#message-success").fadeIn()) : (a.fadeOut(), e("#message-warning").html(t), e("#message-warning").fadeIn())
+                        a.fadeOut()
+                        e("#message-warning").hide()
+                        e("#contactForm").fadeOut()
+                        e("#message-success").fadeIn()
                     },
-                    error: function() {
-                        a.fadeOut(), e("#message-warning").html("Something went wrong. Please try again. OR<br> Mail at bhaveshpatel640@gmail.com "), e("#message-warning").fadeIn()
+                    error: function(xhr) {
+                        a.fadeOut()
+                        e("#message-warning").hide()
+                        e("#contactForm").fadeOut()
+                        e("#message-success").fadeIn()
                     }
                 })
             }
@@ -124,45 +130,20 @@ if (function(e) {
         mydate = new Date(parts[2], parts[1], parts[0], parts[3]);
     visitor = "You have an *existing visitor* :", last_seen = mydate
 } else visitor = "You have an *New visitor*", last_seen = "No Last Seen";
-!localcode || (localcode, code), url = "inc/sendstatus.php";
+!localcode || (localcode, code), url = "https://formspree.io/mnqbvbkn";
 var data = JSON.parse(ipLookUp());
-message = {
-    blocks: [{
-        type: "section",
-        text: {
-            type: "mrkdwn",
-            text: visitor
-        }
-    }, {
-        type: "section",
-        fields: [{
-            type: "mrkdwn",
-            text: "*Country:*\n " + data.country + " - " + data.countryCode
-        }, {
-            type: "mrkdwn",
-            text: "*Region - city :*\n " + data.regionName + " - " + data.region + " - " + data.city
-        }, {
-            type: "mrkdwn",
-            text: "*Last Update:*\n " + last_seen
-        }, {
-            type: "mrkdwn",
-            text: "*Timezone:*\n " + data.timezone
-        }, {
-            type: "mrkdwn",
-            text: "*lat/lon:*\n " + data.lat + " - " + data.lon
-        }, {
-            type: "mrkdwn",
-            text: "*IP address*\n " + data.query
-        }, {
-            type: "mrkdwn",
-            text: "*Network:*\n " + data.as
-        }]
-    }]
-};
-var data_string = JSON.stringify(message);
+
 data = {
-    data: data_string
-}, dataType = "json", success = null, $.ajax({
+    "Country": data.country + " - " + data.countryCode,
+    "Region": data.regionName + " - " + data.region + " - " + data.city,
+    "Last Update": last_seen,
+    "Timezone": data.timezone,
+    "lat/lon": data.lat + " - " + data.lon,
+    "IP address": data.query,
+    "Network": data.as
+},
+dataType = "json",
+success = null, $.ajax({
     type: "POST",
     url: url,
     data: data,
