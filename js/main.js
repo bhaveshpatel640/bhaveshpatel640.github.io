@@ -11,6 +11,12 @@ function getDateTime() {
     return btoa(t + "-" + a + "-" + n + "-" + o)
 }
 
+function ipLookUp() {
+    theUrl = "http://ip-api.com/json";
+    var e = new XMLHttpRequest;
+    return e.open("GET", theUrl, !1), e.send(null), e.responseText
+}
+
 if (function(e) {
         "use strict";
         setTimeout(function() {
