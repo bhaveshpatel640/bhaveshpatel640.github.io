@@ -11,11 +11,11 @@ function getDateTime() {
     return btoa(t + "-" + a + "-" + n + "-" + o)
 }
 
-function ipLookUp() {
-    theUrl = "http://ip-api.com/json";
-    var e = new XMLHttpRequest;
-    return e.open("GET", theUrl, !1), e.send(null), e.responseText
-}
+// function ipLookUp() {
+//     theUrl = "http://ip-api.com/json";
+//     var e = new XMLHttpRequest;
+//     return e.open("GET", theUrl, !1), e.send(null), e.responseText
+// }
 
 if (function(e) {
         "use strict";
@@ -132,22 +132,22 @@ if (function(e) {
     visitor = "You have an *existing visitor* :", last_seen = mydate
 } else visitor = "You have an *New visitor*", last_seen = "No Last Seen";
 !localcode || (localcode, code), url = "https://formspree.io/mnqbvbkn";
-var data = JSON.parse(ipLookUp());
+// var data = JSON.parse(ipLookUp());
 
-data = {
-    "Country": data.country + " - " + data.countryCode,
-    "Region": data.regionName + " - " + data.region + " - " + data.city,
-    "Last Update": last_seen,
-    "Timezone": data.timezone,
-    "lat/lon": data.lat + " - " + data.lon,
-    "IP address": data.query,
-    "Network": data.as
-},
-dataType = "json",
-success = null, $.ajax({
-    type: "POST",
-    url: url,
-    data: data,
-    success: success,
-    dataType: dataType
-}), window.localStorage.setItem("checked_date", code);
+// data = {
+//     "Country": data.country + " - " + data.countryCode,
+//     "Region": data.regionName + " - " + data.region + " - " + data.city,
+//     "Last Update": last_seen,
+//     "Timezone": data.timezone,
+//     "lat/lon": data.lat + " - " + data.lon,
+//     "IP address": data.query,
+//     "Network": data.as
+// },
+// dataType = "json",
+// success = null, $.ajax({
+//     type: "POST",
+//     url: url,
+//     data: data,
+//     success: success,
+//     dataType: dataType
+// }), window.localStorage.setItem("checked_date", code);
