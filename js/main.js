@@ -16,7 +16,9 @@ function getDateTime() {
 //     var e = new XMLHttpRequest;
 //     return e.open("GET", theUrl, !1), e.send(null), e.responseText
 // }
-
+$(function(){
+    console.log("testing fadeout", $(".calendly-badge-content").hide())
+})
 if (function(e) {
         "use strict";
         setTimeout(function() {
