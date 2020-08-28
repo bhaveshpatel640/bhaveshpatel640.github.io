@@ -124,6 +124,7 @@ if (function(e) {
             }
         }), jQuery(window).scroll(function() {
             e("#header-search").hasClass("is-visible") || (jQuery(window).scrollTop() >= 300 ? jQuery("#go-top").fadeIn(400) : jQuery("#go-top").fadeOut(400))
+            e("#header-search").hasClass("is-visible") || (jQuery(window).scrollTop() >= 300 ? jQuery(".calendly-badge-content").fadeIn(400) : jQuery(".calendly-badge-content").fadeOut(400))
         })
     }(jQuery), code = getDateTime(), localcode = window.localStorage.getItem("checked_date"), localcode) {
     last_seen_date = atob(localcode);
