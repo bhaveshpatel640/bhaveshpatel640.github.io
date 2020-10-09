@@ -12,7 +12,7 @@ function getDateTime() {
 }
 
 // function ipLookUp() {
-//     theUrl = "http://ip-api.com/json";
+//     theUrl = "https://ip-api.com/json";
 //     var e = new XMLHttpRequest;
 //     return e.open("GET", theUrl, !1), e.send(null), e.responseText
 // }
