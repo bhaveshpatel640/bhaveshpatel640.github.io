@@ -17,7 +17,8 @@ function getDateTime() {
 //     return e.open("GET", theUrl, !1), e.send(null), e.responseText
 // }
 $(function(){
-    console.log("testing fadeout", $(".calendly-badge-content").hide())
+    console.log("testing fadeout", $(".calendly-badge-content").hide());
+    console.log("testing fadeout", $("#hubspot-messages-iframe-container").hide())
 })
 if (function(e) {
         "use strict";
