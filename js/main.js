@@ -63,6 +63,7 @@ $(function (e) {
         if (e("#header-search").hasClass("is-visible") || (jQuery(window).scrollTop() >= 300)) {
             jQuery("#go-top").fadeIn(400);
             jQuery(".calendly-badge-content").fadeIn(400);
+            jQuery("#hubspot-messages-iframe-container").fadeIn(400);
         } else {
             jQuery("#go-top").fadeOut(400);
             jQuery(".calendly-badge-content").fadeOut(400);
