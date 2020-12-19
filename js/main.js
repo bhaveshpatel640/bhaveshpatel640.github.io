@@ -1,24 +1,3 @@
-function addsubject(e) {
-    "static" == e ? $("#contactSubject").val("Enquiry for the Static website development.") : "dynamic" == e ? $("#contactSubject").val("Enquiry for the Dynamic website development.") : "corporate" == e ? $("#contactSubject").val("Enquiry for the Corporate website development.") : "ecommerce" == e ? $("#contactSubject").val("Enquiry for the E commerce website development.") : $("#contactSubject").val("Enquiry for the website development.")
-}
-
-function getDateTime() {
-    let e = new Date;
-    var t = e.getDate(),
-        a = e.getMonth(),
-        n = e.getFullYear(),
-        o = e.getHours();
-    return btoa(t + "-" + a + "-" + n + "-" + o)
-}
-
-// function ipLookUp() {
-//     theUrl = "https://ip-api.com/json";
-//     var e = new XMLHttpRequest;
-//     return e.open("GET", theUrl, !1), e.send(null), e.responseText
-// }
-$(function () {
-    console.log("testing fadeout", $(".calendly-badge-content").hide());
-})
 $(function (e) {
     "use strict";
     var o = e(".menu-toggle"), i = e(".main-navigation");
@@ -81,30 +60,12 @@ $(function (e) {
         }
     })
     jQuery(window).scroll(function () {
-        e("#header-search").hasClass("is-visible") || (jQuery(window).scrollTop() >= 300 ? jQuery("#go-top").fadeIn(400) : jQuery("#go-top").fadeOut(400))
-        e("#header-search").hasClass("is-visible") || (jQuery(window).scrollTop() >= 300 ? jQuery(".calendly-badge-content").fadeIn(400) : jQuery(".calendly-badge-content").fadeOut(400))
+        if (e("#header-search").hasClass("is-visible") || (jQuery(window).scrollTop() >= 300)) {
+            jQuery("#go-top").fadeIn(400);
+            jQuery(".calendly-badge-content").fadeIn(400);
+        } else {
+            jQuery("#go-top").fadeOut(400);
+            jQuery(".calendly-badge-content").fadeOut(400);
+        }
     })
 })
-
-// last_seen = "No Last Seen";
-// !localcode || (localcode, code)
-// url = "https://formspree.io/mnqbvbkn";
-// var data = JSON.parse(ipLookUp());
-
-// data = {
-//     "Country": data.country + " - " + data.countryCode,
-//     "Region": data.regionName + " - " + data.region + " - " + data.city,
-//     "Last Update": last_seen,
-//     "Timezone": data.timezone,
-//     "lat/lon": data.lat + " - " + data.lon,
-//     "IP address": data.query,
-//     "Network": data.as
-// },
-// dataType = "json",
-// success = null, $.ajax({
-//     type: "POST",
-//     url: url,
-//     data: data,
-//     success: success,
-//     dataType: dataType
-// }), window.localStorage.setItem("checked_date", code);
