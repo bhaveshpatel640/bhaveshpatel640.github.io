@@ -18,7 +18,6 @@ function getDateTime() {
 // }
 $(function () {
     console.log("testing fadeout", $(".calendly-badge-content").hide());
-    console.log("testing fadeout", $("#hubspot-messages-iframe-container").hide())
 })
 $(function (e) {
     "use strict";
@@ -84,7 +83,6 @@ $(function (e) {
     jQuery(window).scroll(function () {
         e("#header-search").hasClass("is-visible") || (jQuery(window).scrollTop() >= 300 ? jQuery("#go-top").fadeIn(400) : jQuery("#go-top").fadeOut(400))
         e("#header-search").hasClass("is-visible") || (jQuery(window).scrollTop() >= 300 ? jQuery(".calendly-badge-content").fadeIn(400) : jQuery(".calendly-badge-content").fadeOut(400))
-        e("#header-search").hasClass("is-visible") || (jQuery(window).scrollTop() >= 300 ? jQuery("#hubspot-messages-iframe-container").fadeIn(400) : jQuery("#hubspot-messages-iframe-container").fadeOut(400))
     })
 })
 
