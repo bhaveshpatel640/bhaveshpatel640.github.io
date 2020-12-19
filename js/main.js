@@ -33,6 +33,19 @@ $(function (e) {
             window.location.hash = a
         })
     })
+    e("#owl-slider").owlCarousel({
+        navigation: !1,
+        pagination: !0,
+        itemsCustom: [
+            [0, 1],
+            [700, 2],
+            [960, 3]
+        ],
+        navigationText: !1
+    })
+    e(".alert-box").on("click", ".close", function () {
+        e(this).parent().fadeOut(500)
+    });
     e("input, textarea, select").placeholder()
     e("#contactForm").validate({
         submitHandler: function (t) {
